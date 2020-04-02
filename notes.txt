@@ -1,0 +1,266 @@
+Variables
+   Primitive and Class types 
+   
+   Primitive
+      byte, short, int and long
+	  float & double
+	  char
+	  boolean 
+	  
+	Weakly typed
+	    No need of datatype
+		
+		Python
+		JavaScript
+		Shell scripting 
+		    a=10
+			a="Kishore"
+			b=10.20
+		Perl 
+		PHP 
+		   $a=10
+		   $b="Kishore"
+		
+	Strongly typed
+	
+	   datatype is required
+	   
+	   
+	      int a = 10;
+		  
+		  
+	
+Operators
+     
+	 1) Arithmetic 
+	 2) Relational  - <,> (-lt, -gt, -le, -ge)
+	 3) Boolean logical 
+		AND, OR and NOT
+		&     |      !
+		a=10
+		b=20
+		(a>b & a>c)
+		
+	 4) Bitwise operators in Java - These operators deal with bits (0s and 1s)
+	 
+		int a = 10;
+		int b = 20;
+		int c = a & b;
+		
+	 5) Short circuit AND , OR 
+	  
+	      && 
+		  || 
+	  
+		(a>b && a>c)
+
+        (a>b || a>c)
+
+     6) Increment and Decrement
+	 
+		++
+		
+		--
+		
+		
+Control Statements:
+
+	1) conditional statements 
+	    if, if-else, if-else-if and nested if (sequential)
+        switch case  (lookup process) - more efficient
+        case statement 
+        select 		
+		
+    2) Iteration statements - loops
+	
+		while
+		do-while - until 
+		for 
+		foreach or enhanced for loop
+		
+	3) Termination statements
+		
+	   break
+	   continue 
+	   return 
+	   
+	   
+	   
+	count=1
+	
+	while [[ $count -le 10 ]]
+	do
+		echo $count
+		((count++))
+	done
+	
+	
+	
+	Ex2:
+	
+	
+	count=1
+	
+	while [[ $count -le 10 ]]
+	do
+	    if [[ $count -eq 5 ]]
+		then
+		   break
+		fi
+		
+		echo $count
+		((count++))
+	done
+	
+	
+	
+	Ex3:
+	
+	
+	count=1
+	
+	while [[ $count -le 10 ]]
+	do
+	    
+	    if [[ $count -eq 5 ]]
+		then
+		   ((count++))
+		   continue
+		fi
+		
+		echo $count
+		((count++))
+	done
+	
+	Output:
+	
+	1 to 10 except 5
+	
+	
+	Ex5 - until loop
+	
+	
+	
+	count=1
+	
+	until [[ $count -gt 10 ]]
+	do
+	    
+	    echo $count
+		((count++))
+	done
+	
+	
+	
+	Example on for loop
+	
+	Syntax:
+	
+	for (( init; condition; increment/decrement ))
+	do
+	   block of code
+	   
+	done 
+	
+	
+	for (( count=1; count <= 10; count++ ))
+	do
+		echo $count
+	done
+	
+	
+	
+	for (( count=1; count <= 10; count++ ))
+	do
+    if [[ $count -eq 5 ]]
+    then
+      continue
+    fi
+		echo $count
+    done
+
+	Foreach loop
+	
+	for variable in array/collection
+	do
+	   block of code 
+	   
+	done
+	
+	for name in Kishore Alex Mike 
+	do
+	  echo $name 
+	done
+	
+
+
+Arrays: A collection of similar date elements (Language specific)
+
+  A collection of data elements 
+  
+
+cities=(Bengaluru London Manchester)
+
+
+for city in $cities
+do 
+  echo $city 
+done 
+
+cities[0]=Delhi
+for all elements:
+>>for city in "${cities[@]}"; do echo $city; done
+
+echo "${cities[@]}"
+
+echo "${#cities[@]}"
+
+ echo "${cities[index]}"
+
+unset cities[2]
+  
+
+Functions
+
+
+Function
+
+	A block of code which can be declared once and called many times 
+	
+	Function definition
+	
+	Syntax:
+	
+	function <functionName> {
+	
+	    Block of code 
+		
+		
+	}
+	
+	Ex:
+	
+	function add {
+	   a=$1
+	   b=$2
+	   echo $[a+b]
+	}
+	
+	Function call
+	
+	Syntax:
+	
+	<functionName> [argument list]
+	
+	
+	Ex:
+	
+	add 100 200
+	
+	
+	
+    
+  
+
+       for i in $(pathsexec); do if [ -x ${i} ]; then echo "${i} is exec"; else echo "not"; fi; done
+

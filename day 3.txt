@@ -1,0 +1,84 @@
+df-file system
+du-disk usage
+
+
+ for i in {a,b}
+ do 
+ echo $i
+ du /bin/"$i"* -h 
+ done
+ 
+ 
+ 
+ SAN
+ NAS
+ RAID
+ 
+ 
+ Scripting:
+ 
+ $0 for current process
+ $1,$2.... : arguments for a function
+ Function syntax:
+ function <function name>(){
+ body
+ }
+ 
+ function call:
+ <function name> [arg1] [arg2] ....
+ 
+ $# gives number of arguments
+ 
+ 
+ """
+ 
+ #!/bin/bash
+args=$@
+
+function usage {
+        echo "i am usage 0"
+        echo "usage: $0 LEFTNUM RIGHTNUM"
+        echo "yours: $0 $@"
+        exit 1
+}
+
+function usage2 {
+        echo "i am usage 2"
+        cat <<EOL
+        usage: $0 LEFTNUM RIGHTNUM
+        yours: $0 $@
+EOL
+        exit 2;}
+
+function usage3 {
+        cat <<-EOL
+        i am usage 3
+        usage: $0 LEFTNUM RIGHTNUM
+        yours Broken: $0 $@
+        yours Fixed : $0 $args
+EOL
+        exit 3;}
+
+function usage4 {
+        cat <<-'EOL' >&2
+        i am usage 4
+        usage: $0 LEFTNUM RIGHTNUM
+        yours: $0 $args
+
+"""
+
+
+$?  gives the return code of the scripts or functions
+
+addition:
+
+data=23
+result=$[data+1]
+
+for loop(traditional):
+
+for ((c=1;c<=5;c++)) 
+do
+echo $c 
+done
+
