@@ -14,28 +14,28 @@ echo -e "\n---------------------------------------------------------------------
 
 function adder(){
 local intfloat
-echo "You have selected ADDITION"
+echo -e "\nYou have selected ADDITION\n"
 user_input
 results=`awk "BEGIN {printf ($var1+$var2)}"`
 #printf "Result: %.2f\n" $results
 }
 
 function subtractor(){
-echo "You have selected SUBTRACTION"
+echo -e "\nYou have selected SUBTRACTION\n"
 user_input
 results=`awk "BEGIN {printf ($var1-$var2)}"`
 #printf "Result: %.2f\n" $results
 }
 
 function dividor(){
-echo "You have selected DIVISION"
+echo -e "\nYou have selected DIVISION\n"
 user_input
 results=`awk "BEGIN {printf ($var1/$var2)}"`
 #printf "Result: %.2f\n" $results
 }
 
 function multiplicator(){
-echo "You have selected MULTIPLICATION"
+echo -e "\nYou have selected MULTIPLICATION\n"
 user_input
 results=`awk "BEGIN {printf ($var1*$var2)}"`
 #printf "Result: %.4f\n" $results
@@ -72,10 +72,10 @@ int_float $results
 intfloat=`echo $?`
 if [[ $intfloat = 105 ]]
 then
-printf "Result: %d\n" $results
+printf "\nResult: %d\n" $results
 elif [[ $intfloat = 102 ]]
 then
-printf "Result: %.2f\n" $results
+printf "\nResult: %.2f\n" $results
 fi
 }
 
@@ -123,7 +123,7 @@ printf "\n1) Addition
 3) Multiplication
 4) Division
 5) Exit
-"
+\n"
 
 read -p "Choose an option: " choices
 
@@ -151,6 +151,7 @@ done
 }
 
 #driver code
+
 printf '\n**** MENU ****\n'
-calmenu
+calmenu 2>&1 | tee ./calculatorlogfile.log
 printf '\nThank you for using this application\n'
